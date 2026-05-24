@@ -27,7 +27,18 @@ def extract_body_inner_html(html_path):
     
     body_match = re.search(r'<body.*?>(.*?)</body>', content, re.DOTALL)
     if body_match:
-        return body_match.group(1)
+        body_html = body_match.group(1)
+        
+        # Safely remove the __framer-badge-container
+        start_str = '<div id="__framer-badge-container">'
+        start_idx = body_html.find(start_str)
+        if start_idx != -1:
+            end_str = '</a><!--/$--><!--/$--><!--/$--></div>'
+            end_idx = body_html.find(end_str, start_idx)
+            if end_idx != -1:
+                body_html = body_html[:start_idx] + body_html[end_idx + len(end_str):]
+                
+        return body_html
     return ''
 
 def create_nextjs_page(route, body_html):
