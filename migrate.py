@@ -42,7 +42,7 @@ def create_nextjs_page(route, body_html):
     tsx_content = f"""
 export default function Page() {{
   return (
-    <div dangerouslySetInnerHTML={{{{ __html: `{safe_body}` }}}} />
+    <div suppressHydrationWarning dangerouslySetInnerHTML={{{{ __html: `{safe_body}` }}}} />
   );
 }}
 """

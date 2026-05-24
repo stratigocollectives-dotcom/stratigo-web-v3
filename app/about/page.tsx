@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning dangerouslySetInnerHTML={{ __html: `
 	<script async src="https://events.framer.com/script?v=2" data-fid="37bc8519847471339828fee0f1382e134bfc0058217d7e4ffb1d8186b866ec58" data-no-nt></script>
 	<!-- Start of bodyStart -->
     
