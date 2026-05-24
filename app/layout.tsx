@@ -1,16 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
-
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+import "./framer-fonts.css"
+import "./framer-styles.css"
 
 export const metadata: Metadata = {
   title: "Stratigo Collectives",
   description:
-    "Transform your business with cutting-edge web development and strategic business solutions. We build digital experiences that drive growth.",
-  generator: "v0.app",
+    "Stratigo Collectives is a leading UI/UX and product design agency based in Nepal, helping startups and enterprises across Southeast Asia create intuitive digital presence and brand design.",
 }
 
 export default function RootLayout({
@@ -20,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body>
         {children}
       </body>
     </html>
